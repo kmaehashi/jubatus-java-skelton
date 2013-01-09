@@ -14,25 +14,9 @@ public class Client {
 	public static final String HOST = "localhost";
 	public static final int PORT = 9199;
 	public static final String NAME = "";
-	public static final String ALGORITHM = "lsh";
 
 	public void start() throws Exception {
-		BufferedReader br = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("config.json")));
-		StringBuilder sb = new StringBuilder();
-		String line;
-		while ((line = br.readLine()) != null) {
-			sb.append(line);
-			sb.append('\n');
-		}
-		br.close();
-
-		ConfigData config = new ConfigData();
-		config.method = ALGORITHM;
-		config.converter = sb.toString();
-
 		RecommenderClient r = new RecommenderClient(HOST, PORT, 5);
-		r.set_config(NAME, config);
-
 		Datum d = new Datum();
 		d.string_values = new ArrayList<TupleStringString>();
 		d.num_values = new ArrayList<TupleStringDouble>();
