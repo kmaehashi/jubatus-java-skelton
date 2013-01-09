@@ -1,9 +1,6 @@
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-import us.jubat.recommender.ConfigData;
 import us.jubat.recommender.Datum;
 import us.jubat.recommender.RecommenderClient;
 import us.jubat.recommender.TupleStringDouble;
